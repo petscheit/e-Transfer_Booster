@@ -1,0 +1,7 @@
+.taskMain {
+  transition: all .2s ease-in-out;
+}
+
+.taskMain:hover {
+  transform: scale(1.05);
+}

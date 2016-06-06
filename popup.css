@@ -1,0 +1,16 @@
+.popup {
+    width: 30em;
+}
+
+.hide {
+    display: none;
+}
+
+.task:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.width {
+  width: 100%;
+}
