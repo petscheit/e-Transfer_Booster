@@ -33,6 +33,8 @@ var openTasksNumber = function(){
   return count.toString()
 }
 
-chrome.browserAction.setBadgeText({
-  text: openTasksNumber()
-});
+var setBadgeText = function(){
+  chrome.browserAction.setBadgeText({
+    text: openTasksNumber()
+  });
+}

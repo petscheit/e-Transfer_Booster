@@ -15,7 +15,7 @@ saveToLocalStorage = function(options) {
   }
   array.push({name: options.selection, status: 'open', 'timestamp': date(), 'reminder': options['reminder']});
   localStorage.setItem('todo', JSON.stringify(array));
-  console.log('saved')
+  chrome.extension.getBackgroundPage().setBadgeText()
 }
 
 var todo = function() {

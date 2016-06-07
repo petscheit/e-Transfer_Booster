@@ -11,12 +11,12 @@ var finishTask = function(){
     var entry = JSON.parse(localStorage.getItem('todo') || [] )
     entry[index].status = 'done'
     localStorage.setItem('todo', JSON.stringify(entry));
+    chrome.extension.getBackgroundPage().setBadgeText()
   })
 }
 
 var buttonClick = function(){
   $('#dashboard').on('click', function(event){
-    console.log(chrome.extension.getBackgroundPage().date());
     chrome.tabs.create({url: 'dashboard.html'})
   })
 }
