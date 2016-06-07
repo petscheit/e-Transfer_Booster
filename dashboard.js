@@ -3,6 +3,7 @@ $(function(){
   openTask(openTasks);
   doneTask(doneTasks);
   tomorrowTask(tomorrowTasks);
+  terminListener();
 })
 
 var sortTasks = function() {
@@ -46,4 +47,28 @@ var tomorrowTask = function(tasks) {
   _.each(tasks, function(task, index){
     $('#tomorrowTasks').append('<tr id="' + index + '" class="taskMain"><td>' + task.name + '</td></tr>')
   });
+}
+
+var terminListener = function(){
+  $("#newTermin").on('click', function(){
+    swal({
+      title: "An input!",
+      text: "Write something interesting:",
+      type: "input",
+      showCancelButton: true,
+      closeOnConfirm: false,
+      animation: "slide-from-top",
+      inputPlaceholder: "Write something"
+    },
+    function(inputValue){
+      if (inputValue === false){
+        return false;
+      }
+
+      if (inputValue === "") {
+        swal.showInputError("You need to write something!");
+        return false
+      }
+      swal("Nice!", "You wrote: " + inputValue, "success"); });
+  })
 }
